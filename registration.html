@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AYADI GLOCAL SCHOOL</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('image4.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    .header {
+      padding: 50px 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .header img {
+      width: 600px;
+      height: auto;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      color: black;
+      margin-top: 10px;
+    }
+
+    .nav-buttons {
+      margin-top: 30px;
+    }
+
+    .nav-buttons a {
+      display: inline-block;
+      background-color: red;
+      color: white;
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 10px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .nav-buttons a:hover {
+      background-color: darkred;
+    }
+
+    .form-section {
+      margin: 40px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 500px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+    }
+
+    .form-section h2 {
+      color: violet;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .form-group input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    .submit-button {
+      margin-top: 20px;
+      padding: 10px 30px;
+      font-size: 18px;
+      border: none;
+      background-color: violet;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: purple;
+    }
+
+    #thankYouMessage {
+      display: none;
+      margin-top: 20px;
+      font-size: 20px;
+      color: lightgreen;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .footer h2 {
+      font-size: 28px;
+      color: violet;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="ayadi.jpg" alt="AYADI Logo">
+    <h1></h1>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="home.html">HOME</a>
+    <a href="#registration">REGISTRATION</a>
+  </div>
+
+  <div class="form-section" id="registration">
+    <h2>Registration Form</h2>
+    <form onsubmit="showThankYou(event)">
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-group">
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="30"></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+    <div id="thankYouMessage">
+      Thank you for submitting!
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2>AYADI GLOCAL SCHOOL</h2>
+  </div>
+
+  <!-- ✅ JavaScript to show message then redirect -->
+  <script>
+    function showThankYou(event) {
+      event.preventDefault();
+      document.getElementById('thankYouMessage').style.display = 'block';
+
+      // Redirect to homepage after 2 seconds
+      setTimeout(function () {
+        window.location.href = "home.html";
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
